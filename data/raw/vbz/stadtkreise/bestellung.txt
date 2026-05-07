@@ -1,0 +1,6 @@
+﻿Sie haben folgende Bestellung aufgegeben: 
+Name des Geodatensatzes: Stadtkreise 
+Name des Ausschnittes: full
+Ausschnitt (falls definiert): 0, 0, 0,0 
+Zeitpunkt der Bearbeitung: 07.05.2026 - 13:47 
+

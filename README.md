@@ -5,20 +5,21 @@
 
 ## Inhalt
 
-1. [Kurzbeschreibung](#kurzbeschreibung)
-2. [Die Idee](#die-idee)
-3. [Warum Zürich — warum Tram?](#warum-zuerich)
-4. [Das Problem](#das-problem)
-5. [Zentrale Fragen](#zentrale-fragen)
-6. [Projekt-Phasen](#projekt-phasen)
-7. [Daten & Quellen](#daten-und-quellen)
-8. [Business Cases & KPIs](#business-cases)
-9. [Motivation & Portfolio-Mehrwert](#motivation)
+1. [Kurzbeschreibung](#1-kurzbeschreibung)
+2. [Die Idee](#2-die-idee)
+3. [Warum Zürich — warum Tram?](#3-warum-zürich--warum-tram)
+4. [Das Problem](#4-das-problem)
+5. [Zentrale Fragen](#5-zentrale-fragen)
+6. [Projekt-Phasen](#6-projekt-phasen)
+7. [Daten & Quellen](#7-daten--quellen)
+8. [Business Cases & KPIs](#8-business-cases--kpis)
+9. [Motivation & Portfolio-Mehrwert](#9-motivation--portfolio-mehrwert)
 
 ---
 
 ## Projektstruktur
 
+```
 sf_data-research/
 ├── README.md              ← Projektbeschreibung
 ├── ROADMAP.md             ← Phasen, Todos, Fortschritt
@@ -34,12 +35,13 @@ sf_data-research/
 │       ├── vbz-meteo-data.ipynb       ← Wetterdaten
 │       └── vbz-geo-map.ipynb          ← Kartenvisualisierung
 │
-└── data/              ← ⚠️ Nicht im Repo (siehe unten)
-├── raw/               ← Quelldaten (ZIP-Archive)
-└── interim/           ← Gefilterte Parquet-Dateien
+└── data/                  ← ⚠️ Nicht im Repo (siehe unten)
+    ├── raw/               ← Quelldaten (ZIP-Archive)
+    └── interim/           ← Gefilterte Parquet-Dateien
+```
 
-> **Hinweis:** Die Rohdaten (~39 GB ZIPs, ~1.2 GB Parquets) sind nicht im Repo enthalten.   
-Download-Anleitung: `vbz-ist-daten.ipynb` und `vbz-ist-daten-demo.ipynb` 
+> **Hinweis:** Die Rohdaten (~39 GB ZIPs, ~1.2 GB Parquets) sind nicht im Repo enthalten.
+> Download-Anleitung: `vbz-ist-daten.ipynb` und `vbz-ist-daten-demo.ipynb`
 
 ---
 
@@ -216,4 +218,3 @@ greifbar — an einem Thema, das jeden täglich betrifft.
 Zürich dient als Referenzmodell — für Städte wie Berlin, die ihre Datenpotenziale
 noch nicht ausschöpfen. Das Ziel ist nicht nur ein Portfolio-Projekt, sondern ein
 konkreter Anstoß: Bessere Daten = bessere Städte = besserer Alltag für alle.
-

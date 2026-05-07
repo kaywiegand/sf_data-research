@@ -21,27 +21,59 @@
 
 ```
 sf_data-research/
-├── README.md              ← Projektbeschreibung
-├── ROADMAP.md             ← Phasen, Todos, Fortschritt
+├── README.md
+├── ROADMAP.md
 │
 ├── notebooks/
 │   └── vbz/
-│       ├── vbz-data.ipynb             ← Datenquellen & Strukturen
-│       ├── vbz-data-strategy.ipynb    ← Technische Entscheidungen
-│       ├── vbz-ist-daten.ipynb        ← Download & Verarbeitung Ist-Daten
-│       ├── vbz-ist-daten-demo.ipynb   ← Demo Pipeline (ein Monat)
-│       ├── vbz-events-data.ipynb      ← Event-Kalender 2023–2025
-│       ├── vbz-gtfs-data.ipynb        ← Geodaten & Haltestellen
-│       ├── vbz-meteo-data.ipynb       ← Wetterdaten
-│       └── vbz-geo-map.ipynb          ← Kartenvisualisierung
+│       ├── vbz-data.ipynb                  ← Datenquellen & Strukturen
+│       ├── vbz-data-strategy.ipynb         ← Technische Entscheidungen
+│       ├── vbz-ist-daten.ipynb             ← Download & Verarbeitung Ist-Daten
+│       ├── vbz-ist-daten-demo.ipynb        ← Demo Pipeline (ein Monat)
+│       ├── vbz-gtfs-data.ipynb             ← GTFS-Aufbereitung & Export (Tram + Zürich)
+│       ├── vbz-meteo-data.ipynb            ← Wetterdaten-Pipeline (UGZ / Wapo / ERZ)
+│       ├── vbz-events-data.ipynb           ← Event-Kalender 2023–2025
+│       ├── vbz-geo-data.ipynb              ← Geo-Daten & Visualisierungs-Benchmark
+│       ├── vbz-geo-map-plotly.ipynb        ← Karten: Plotly / Maplibre
+│       ├── vbz-geo-map-geopandas.ipynb     ← Karten: GeoPandas / Matplotlib
+│       ├── vbz-geo-map-folium.ipynb        ← Karten: Folium / Leaflet
+│       └── vbz-geo-map-kepler.ipynb        ← Karten: lonboard / Deck.gl
 │
-└── data/                  ← ⚠️ Nicht im Repo (siehe unten)
-    ├── raw/               ← Quelldaten (ZIP-Archive)
-    └── interim/           ← Gefilterte Parquet-Dateien
+├── src/
+│   ├── process_ist_daten.py                ← IST-Daten-Verarbeitung (Batch-Skript)
+│   └── doc_loader.py                       ← Hilfsfunktionen
+│
+├── reports/                                ← Exportierte Karten & Berichte
+│   ├── folium_tramnetz.html
+│   ├── folium_heatmap.html
+│   ├── folium_stops_delay.html
+│   ├── folium_strecken_linie11.html
+│   ├── geopandas_tramnetz.pdf
+│   ├── geopandas_heatmap.pdf
+│   └── geopandas_strecken_linie11.pdf
+│
+└── data/
+    ├── raw/vbz/
+    │   ├── gtfs/                           ← GTFS-Feeds 2023–2025 (*.txt)  ⚠️
+    │   │   ├── 2023_google_transit/
+    │   │   ├── 2024_google_transit/
+    │   │   └── 2025_google_transit/
+    │   ├── meteo/
+    │   │   ├── ugz/                        ← UGZ Stundenmittelwerte (CSV)  ⚠️
+    │   │   ├── wapo/                       ← Wasserpolizei Mythenquai (Parquet)  ⚠️
+    │   │   └── erz/                        ← ERZ Überschwemmungsmeldungen (CSV)  ⚠️
+    │   ├── stadtkreise/                    ← GeoJSON Stadtkreise Zürich (CC0)  ✅
+    │   └── events/                         ← Event-Rohdaten nach Kategorie (CSV)  ✅
+    └── interim/vbz/
+        ├── ist-daten/                      ← ~1.100 Parquets (täglich, 2023–2025)  ⚠️
+        ├── gtfs/                           ← Gefilterte Tram-Parquets (8 Dateien)  ✅
+        ├── meteo/                          ← meteo-master.parquet + Datenwörterbuch  ✅
+        └── events/                         ← events-master.csv + Datenwörterbuch  ✅
 ```
 
-> **Hinweis:** Die Rohdaten (~39 GB ZIPs, ~1.2 GB Parquets) sind nicht im Repo enthalten.
-> Download-Anleitung: `vbz-ist-daten.ipynb` und `vbz-ist-daten-demo.ipynb`
+> ✅ im Repo enthalten  /  ⚠️ nicht im Repo — zu groß oder nicht notwendig
+>
+> Download-Anleitung Ist-Daten: `vbz-ist-daten.ipynb` und `vbz-ist-daten-demo.ipynb`
 
 ---
 

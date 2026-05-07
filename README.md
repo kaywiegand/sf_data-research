@@ -207,6 +207,13 @@ Ziel: ÖPNV attraktiver machen, Individualverkehr reduzieren
 Data Science und KI wirken für viele abstrakt. Dieses Projekt macht den Mehrwert
 greifbar — an einem Thema, das jeden täglich betrifft.
 
+**Impact — warum das mehr ist als ein Datenprojekt:**
+- 🏙️ **Feel-Good City:** Verlässlicher ÖPNV verbessert direkt die Lebensqualität im Stadtraum
+- 🌱 **Nachhaltigkeit:** Attraktiverer ÖPNV reduziert Individualverkehr — weniger CO₂, weniger Lärm
+- 😤 **Emotionaler Alltag:** Verspätungen erzeugen echten Stress — Frust, Aggression, verpasste Termine
+- 🗺️ **Städtebau:** Schwachstellen im Netz identifizieren und Investitionen gezielt steuern
+- 🌍 **SDG 11:** Beitrag zu den UN-Zielen für nachhaltige Städte und Gemeinden
+
 **Was steckt technisch drin?**
 - Data Engineering: Ingestion, Cleaning, Wrangling großer Datenmengen
 - Explorative Analyse (EDA) & Reporting

@@ -28,3 +28,5 @@ venv/
 
 # --- macOS ---
 .DS_Store.jupyter/
+.DS_Store
+.jupyter/

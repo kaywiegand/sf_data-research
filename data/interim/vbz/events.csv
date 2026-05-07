@@ -1,0 +1,259 @@
+Datum;Event_Name;Typ;Gewichtung;Ort
+2023-01-01;Neujahrstag;Feiertag;1.0;Zürich
+2023-01-02;Berchtoldstag;Feiertag;1.0;Zürich
+2023-01-13;World Crypto Conference;Kongress;1.0;Zürich
+2023-01-14;World Crypto Conference;Kongress;1.0;Zürich
+2023-01-15;World Crypto Conference;Kongress;1.0;Zürich
+2023-01-21;GCZ vs BSC Young Boys;Super League;1.0;Letzigrund
+2023-01-29;FCZ vs FC St. Gallen 1879;Super League;2.0;Letzigrund
+2023-02-01;GCZ vs FC Basel 1893;Schweizer Cup;1.0;Letzigrund
+2023-02-04;GCZ vs FC Basel 1893;Super League;1.0;Letzigrund
+2023-02-12;FCZ vs FC Winterthur;Super League;2.0;Letzigrund
+2023-02-19;GCZ vs FC Zürich;Super League;1.0;Letzigrund
+2023-02-25;FCZ vs BSC Young Boys;Super League;2.0;Letzigrund
+2023-03-05;FCZ vs Servette FC;Super League;2.0;Letzigrund
+2023-03-12;GCZ vs FC Winterthur;Super League;1.0;Letzigrund
+2023-03-18;FCZ vs FC Luzern;Super League;2.0;Letzigrund
+2023-03-28;Personal Swiss;Fachmesse;1.0;Messe Zürich
+2023-03-29;Personal Swiss;Fachmesse;1.0;Messe Zürich
+2023-04-02;GCZ vs FC Lugano;Super League;1.0;Letzigrund
+2023-04-07;Karfreitag;Feiertag;1.0;Zürich
+2023-04-08;FCZ vs FC Basel 1893;Super League;2.0;Letzigrund
+2023-04-10;Ostermontag;Feiertag;1.0;Zürich
+2023-04-16;GCZ vs FC Sion;Super League;1.0;Letzigrund
+2023-04-17;Sechseläuten;Feiertag;1.0;Zürich
+2023-04-23;FCZ vs FC St. Gallen 1879;Super League;2.0;Letzigrund
+2023-04-25;GCZ vs BSC Young Boys;Super League;1.0;Letzigrund
+2023-04-30;FCZ vs FC Sion;Super League;2.0;Letzigrund
+2023-05-01;Tag der Arbeit;Feiertag;1.0;Zürich
+2023-05-07;GCZ vs Servette FC;Super League;1.0;Letzigrund
+2023-05-13;GCZ vs FC Luzern;Super League;1.0;Letzigrund
+2023-05-17;SATW-Jahreskongress;Kongress;1.0;Google Zürich
+2023-05-18;Auffahrt;Feiertag;1.0;Zürich
+2023-05-21;FCZ vs Grasshopper Club Zürich;Super League;2.0;Letzigrund
+2023-05-25;GCZ vs FC St. Gallen 1879;Super League;1.0;Letzigrund
+2023-05-29;FCZ vs FC Lugano;Super League;2.0;Letzigrund
+2023-05-29;Pfingstmontag;Feiertag;1.0;Zürich
+2023-07-07;Züri Fäscht;Stadtfest;3.0;Zürich
+2023-07-08;Züri Fäscht;Stadtfest;3.0;Zürich
+2023-07-09;Züri Fäscht;Stadtfest;3.0;Zürich
+2023-07-22;GCZ vs Servette FC;Super League;1.0;Letzigrund
+2023-07-23;FCZ vs Yverdon Sport FC;Super League;2.0;Letzigrund
+2023-08-01;Nationalfeiertag;Feiertag;1.0;Zürich
+2023-08-05;FCZ vs FC Lugano;Super League;2.0;Letzigrund
+2023-08-06;GCZ vs FC Basel 1893;Super League;1.0;Letzigrund
+2023-08-12;Street Parade;Stadtfest;3.0;Zürich
+2023-08-26;FCZ vs FC St. Gallen 1879;Super League;2.0;Letzigrund
+2023-08-27;GCZ vs FC Luzern;Super League;1.0;Letzigrund
+2023-09-11;Knabenschiessen;Feiertag;1.0;Zürich
+2023-09-23;GCZ vs FC St. Gallen 1879;Super League;1.0;Letzigrund
+2023-09-26;FCZ vs Grasshopper Club Zürich;Super League;2.0;Letzigrund
+2023-09-30;GCZ vs BSC Young Boys;Super League;1.0;Letzigrund
+2023-10-07;FCZ vs FC Winterthur;Super League;2.0;Letzigrund
+2023-10-13;AI+X Summit;Kongress;1.0;StageOne, Zürich-Oerlikon
+2023-10-22;GCZ vs FC Lugano;Super League;1.0;Letzigrund
+2023-10-28;FCZ vs FC Stade-Lausanne-Ouchy;Super League;2.0;Letzigrund
+2023-11-02;Master-Messe Zürich;Fachmesse;1.0;Halle 550, Zürich-Oerlikon
+2023-11-02;Auto Zürich;Fachmesse;2.0;Messe Zürich
+2023-11-03;Auto Zürich;Fachmesse;2.0;Messe Zürich
+2023-11-04;FCZ vs Servette FC;Super League;2.0;Letzigrund
+2023-11-04;Auto Zürich;Fachmesse;2.0;Messe Zürich
+2023-11-05;Auto Zürich;Fachmesse;2.0;Messe Zürich
+2023-11-12;GCZ vs FC Stade-Lausanne-Ouchy;Super League;1.0;Letzigrund
+2023-11-21;Berufsmesse Zürich;Fachmesse;2.0;Messe Zürich
+2023-11-22;Berufsmesse Zürich;Fachmesse;2.0;Messe Zürich
+2023-11-23;Berufsmesse Zürich;Fachmesse;2.0;Messe Zürich
+2023-11-24;Berufsmesse Zürich;Fachmesse;2.0;Messe Zürich
+2023-11-25;FCZ vs BSC Young Boys;Super League;2.0;Letzigrund
+2023-11-25;Berufsmesse Zürich;Fachmesse;2.0;Messe Zürich
+2023-12-02;GCZ vs FC Lausanne-Sport;Super League;1.0;Letzigrund
+2023-12-10;FCZ vs FC Luzern;Super League;2.0;Letzigrund
+2023-12-13;NOAH Zurich Conference;Kongress;1.0;Zürich
+2023-12-14;NOAH Zurich Conference;Kongress;1.0;Zürich
+2023-12-16;GCZ vs Yverdon Sport FC;Super League;1.0;Letzigrund
+2023-12-25;Weihnachten;Feiertag;1.0;Zürich
+2023-12-26;Stephanstag;Feiertag;1.0;Zürich
+2023-12-31;Silvesterzauber;Stadtfest;2.0;Zürich
+2024-01-01;Silvesterzauber;Stadtfest;2.0;Zürich
+2024-01-01;Neujahrstag;Feiertag;1.0;Zürich
+2024-01-02;Berchtoldstag;Feiertag;1.0;Zürich
+2024-01-21;FCZ vs FC Basel 1893;Super League;2.0;Letzigrund
+2024-01-28;GCZ vs FC Zürich;Super League;1.0;Letzigrund
+2024-01-31;FCZ vs FC Lausanne-Sport;Super League;2.0;Letzigrund
+2024-02-03;GCZ vs FC Winterthur;Super League;1.0;Letzigrund
+2024-02-10;FCZ vs Grasshopper Club Zürich;Super League;2.0;Letzigrund
+2024-02-17;GCZ vs FC Basel 1893;Super League;1.0;Letzigrund
+2024-02-24;GCZ vs FC Luzern;Super League;1.0;Letzigrund
+2024-02-28;FCZ vs FC Winterthur;Schweizer Cup;1.0;Letzigrund
+2024-03-03;FCZ vs BSC Young Boys;Super League;2.0;Letzigrund
+2024-03-13;Giardina;Fachmesse;2.0;Messe Zürich
+2024-03-14;Giardina;Fachmesse;2.0;Messe Zürich
+2024-03-15;Giardina;Fachmesse;2.0;Messe Zürich
+2024-03-16;Giardina;Fachmesse;2.0;Messe Zürich
+2024-03-16;GCZ vs FC St. Gallen 1879;Super League;1.0;Letzigrund
+2024-03-17;Giardina;Fachmesse;2.0;Messe Zürich
+2024-03-17;FCZ vs FC Stade-Lausanne-Ouchy;Super League;2.0;Letzigrund
+2024-03-18;Informatiktage 2024;Kongress;1.0;Zürich
+2024-03-19;Informatiktage 2024;Kongress;1.0;Zürich
+2024-03-20;Informatiktage 2024;Kongress;1.0;Zürich
+2024-03-21;Informatiktage 2024;Kongress;1.0;Zürich
+2024-03-22;Informatiktage 2024;Kongress;1.0;Zürich
+2024-03-23;Informatiktage 2024;Kongress;1.0;Zürich
+2024-03-29;Karfreitag;Feiertag;1.0;Zürich
+2024-04-01;Ostermontag;Feiertag;1.0;Zürich
+2024-04-01;GCZ vs FC Lausanne-Sport;Super League;1.0;Letzigrund
+2024-04-03;FCZ vs FC Winterthur;Super League;2.0;Letzigrund
+2024-04-13;GCZ vs FC Lugano;Super League;1.0;Letzigrund
+2024-04-15;Sechseläuten;Feiertag;1.0;Zürich
+2024-04-21;FCZ vs FC St. Gallen 1879;Super League;2.0;Letzigrund
+2024-05-01;Tag der Arbeit;Feiertag;1.0;Zürich
+2024-05-04;GCZ vs FC Stade-Lausanne-Ouchy;Super League;1.0;Letzigrund
+2024-05-05;FCZ vs BSC Young Boys;Super League;2.0;Letzigrund
+2024-05-09;Auffahrt;Feiertag;1.0;Zürich
+2024-05-14;GCZ vs Yverdon Sport FC;Super League;1.0;Letzigrund
+2024-05-15;FCZ vs Servette FC;Super League;2.0;Letzigrund
+2024-05-18;GCZ vs FC Basel 1893;Super League;1.0;Letzigrund
+2024-05-20;Pfingstmontag;Feiertag;1.0;Zürich
+2024-05-20;FCZ vs FC Lugano;Super League;2.0;Letzigrund
+2024-05-23;Bildungsmesse Zürich HB;Fachmesse;1.0;Hauptbahnhof Zürich
+2024-05-24;Bildungsmesse Zürich HB;Fachmesse;1.0;Hauptbahnhof Zürich
+2024-05-25;Bildungsmesse Zürich HB;Fachmesse;1.0;Hauptbahnhof Zürich
+2024-05-26;GCZ vs FC Thun;Super League Barrage;1.0;Letzigrund
+2024-06-29;AC/DC;Konzert;3.0;Stadion Letzigrund
+2024-07-09;Taylor Swift;Konzert;3.0;Stadion Letzigrund
+2024-07-10;Taylor Swift;Konzert;3.0;Stadion Letzigrund
+2024-07-25;FCZ vs Shelbourne FC;UEFA Conference League Qual.;2.0;Letzigrund
+2024-07-27;GCZ vs FC Luzern;Super League;1.0;Letzigrund
+2024-07-28;FCZ vs FC Winterthur;Super League;2.0;Letzigrund
+2024-08-01;Nationalfeiertag;Feiertag;1.0;Zürich
+2024-08-03;GCZ vs FC Basel 1893;Super League;1.0;Letzigrund
+2024-08-08;FCZ vs Vitória Guimarães SC;UEFA Conference League Qual.;2.0;Letzigrund
+2024-08-10;Street Parade;Stadtfest;3.0;Zürich
+2024-08-11;FCZ vs FC Lausanne-Sport;Super League;2.0;Letzigrund
+2024-08-24;GCZ vs FC Sion;Super League;1.0;Letzigrund
+2024-08-28;all about automation & maintenance;Fachmesse;1.0;Messe Zürich
+2024-08-29;all about automation & maintenance;Fachmesse;1.0;Messe Zürich
+2024-09-01;FCZ vs FC Luzern;Super League;2.0;Letzigrund
+2024-09-09;Knabenschiessen;Feiertag;1.0;Zürich
+2024-09-18;Solar & Storage Zürich Live;Fachmesse;1.0;Zürich
+2024-09-19;Solar & Storage Zürich Live;Fachmesse;1.0;Zürich
+2024-09-21;GCZ vs Servette FC;Super League;1.0;Letzigrund
+2024-09-29;FCZ vs FC Sion;Super League;2.0;Letzigrund
+2024-10-06;FCZ vs FC Lugano;Super League;2.0;Letzigrund
+2024-10-13;AI+X Summit;Kongress;1.0;StageOne, Zürich-Oerlikon
+2024-10-19;GCZ vs FC Zürich;Super League;1.0;Letzigrund
+2024-10-27;FCZ vs Servette FC;Super League;2.0;Letzigrund
+2024-10-31;GCZ vs FC Lugano;Super League;1.0;Letzigrund
+2024-11-02;FCZ vs BSC Young Boys;Super League;2.0;Letzigrund
+2024-11-07;Auto Zürich;Fachmesse;2.0;Messe Zürich
+2024-11-08;Auto Zürich;Fachmesse;2.0;Messe Zürich
+2024-11-09;Auto Zürich;Fachmesse;2.0;Messe Zürich
+2024-11-10;GCZ vs FC St. Gallen 1879;Super League;1.0;Letzigrund
+2024-11-10;Auto Zürich;Fachmesse;2.0;Messe Zürich
+2024-11-19;Berufsmesse Zürich;Fachmesse;2.0;Messe Zürich
+2024-11-20;Berufsmesse Zürich;Fachmesse;2.0;Messe Zürich
+2024-11-21;Berufsmesse Zürich;Fachmesse;2.0;Messe Zürich
+2024-11-22;Berufsmesse Zürich;Fachmesse;2.0;Messe Zürich
+2024-11-23;Berufsmesse Zürich;Fachmesse;2.0;Messe Zürich
+2024-11-23;GCZ vs FC Winterthur;Super League;1.0;Letzigrund
+2024-11-30;FCZ vs Grasshopper Club Zürich;Super League;2.0;Letzigrund
+2024-12-03;GCZ vs FC Zürich;Schweizer Cup;1.0;Letzigrund
+2024-12-07;GCZ vs Yverdon Sport FC;Super League;1.0;Letzigrund
+2024-12-15;FCZ vs FC St. Gallen 1879;Super League;2.0;Letzigrund
+2024-12-25;Weihnachten;Feiertag;1.0;Zürich
+2024-12-26;Stephanstag;Feiertag;1.0;Zürich
+2024-12-31;Silvesterzauber;Stadtfest;2.0;Zürich
+2025-01-01;Silvesterzauber;Stadtfest;2.0;Zürich
+2025-01-01;Neujahrstag;Feiertag;1.0;Zürich
+2025-01-02;Berchtoldstag;Feiertag;1.0;Zürich
+2025-01-19;FCZ vs Yverdon Sport FC;Super League;2.0;Letzigrund
+2025-01-22;Logistics & Automation;Fachmesse;1.0;Messe Zürich
+2025-01-23;Logistics & Automation;Fachmesse;1.0;Messe Zürich
+2025-01-25;GCZ vs BSC Young Boys;Super League;1.0;Letzigrund
+2025-02-02;FCZ vs FC Basel 1893;Super League;2.0;Letzigrund
+2025-02-04;GCZ vs FC Lausanne-Sport;Super League;1.0;Letzigrund
+2025-02-09;FCZ vs FC St. Gallen 1879;Super League;2.0;Letzigrund
+2025-02-16;GCZ vs Servette FC;Super League;1.0;Letzigrund
+2025-02-22;FCZ vs Yverdon Sport FC;Super League;2.0;Letzigrund
+2025-02-27;FCZ vs BSC Young Boys;Schweizer Cup;1.0;Letzigrund
+2025-03-02;GCZ vs BSC Young Boys;Super League;1.0;Letzigrund
+2025-03-09;FCZ vs Servette FC;Super League;2.0;Letzigrund
+2025-03-13;Transform 2025 (Siemens);Kongress;1.0;StageOne, Zürich-Oerlikon
+2025-03-15;FCZ vs FC Luzern;Super League;2.0;Letzigrund
+2025-03-16;GCZ vs FC Sion;Super League;1.0;Letzigrund
+2025-03-30;GCZ vs FC Zürich;Super League;1.0;Letzigrund
+2025-04-02;FCZ vs FC Lausanne-Sport;Super League;2.0;Letzigrund
+2025-04-06;GCZ vs FC Luzern;Super League;1.0;Letzigrund
+2025-04-12;FCZ vs FC Basel 1893;Super League;2.0;Letzigrund
+2025-04-18;Karfreitag;Feiertag;1.0;Zürich
+2025-04-19;GCZ vs FC Winterthur;Super League;1.0;Letzigrund
+2025-04-21;Ostermontag;Feiertag;1.0;Zürich
+2025-04-28;Sechseläuten;Feiertag;1.0;Zürich
+2025-05-01;Tag der Arbeit;Feiertag;1.0;Zürich
+2025-05-10;FCZ vs Grasshopper Club Zürich;Super League;2.0;Letzigrund
+2025-05-13;FCZ vs FC Winterthur;Super League;2.0;Letzigrund
+2025-05-14;GCZ vs Yverdon Sport FC;Super League;1.0;Letzigrund
+2025-05-15;DVSE Jahreskongress;Kongress;1.0;Zürich
+2025-05-16;DVSE Jahreskongress;Kongress;1.0;Zürich
+2025-05-19;CIMAC Weltkongress 2025;Kongress;1.0;Zürich
+2025-05-20;CIMAC Weltkongress 2025;Kongress;1.0;Zürich
+2025-05-21;CIMAC Weltkongress 2025;Kongress;1.0;Zürich
+2025-05-22;GCZ vs FC St. Gallen 1879;Super League;1.0;Letzigrund
+2025-05-22;CIMAC Weltkongress 2025;Kongress;1.0;Zürich
+2025-05-23;CIMAC Weltkongress 2025;Kongress;1.0;Zürich
+2025-05-27;GCZ vs FC Aarau;Super League Barrage;1.0;Letzigrund
+2025-05-29;Auffahrt;Feiertag;1.0;Zürich
+2025-06-09;Pfingstmontag;Feiertag;1.0;Zürich
+2025-07-25;FCZ vs FC Sion;Super League;2.0;Letzigrund
+2025-07-26;GCZ vs FC Luzern;Super League;1.0;Letzigrund
+2025-08-01;Nationalfeiertag;Feiertag;1.0;Zürich
+2025-08-02;Ed Sheeran;Konzert;2.0;Stadion Letzigrund
+2025-08-03;Ed Sheeran;Konzert;2.0;Stadion Letzigrund
+2025-08-09;Street Parade;Stadtfest;3.0;Zürich
+2025-08-23;FCZ vs FC Thun;Super League;2.0;Letzigrund
+2025-08-24;GCZ vs FC Winterthur;Super League;1.0;Letzigrund
+2025-09-04;Zürich Design Weeks;Fachmesse;2.0;Verschiedene Orte, Zürich
+2025-09-05;Zürich Design Weeks;Fachmesse;2.0;Verschiedene Orte, Zürich
+2025-09-06;Zürich Design Weeks;Fachmesse;2.0;Verschiedene Orte, Zürich
+2025-09-07;Zürich Design Weeks;Fachmesse;2.0;Verschiedene Orte, Zürich
+2025-09-08;Zürich Design Weeks;Fachmesse;2.0;Verschiedene Orte, Zürich
+2025-09-08;Knabenschiessen;Feiertag;1.0;Zürich
+2025-09-09;Zürich Design Weeks;Fachmesse;2.0;Verschiedene Orte, Zürich
+2025-09-10;Zürich Design Weeks;Fachmesse;2.0;Verschiedene Orte, Zürich
+2025-09-11;Zürich Design Weeks;Fachmesse;2.0;Verschiedene Orte, Zürich
+2025-09-12;Zürich Design Weeks;Fachmesse;2.0;Verschiedene Orte, Zürich
+2025-09-13;FCZ vs Servette FC;Super League;2.0;Letzigrund
+2025-09-13;Zürich Design Weeks;Fachmesse;2.0;Verschiedene Orte, Zürich
+2025-09-13;Maturierenden-Messe;Fachmesse;1.0;StageOne, Zürich-Oerlikon
+2025-09-14;GCZ vs FC Lausanne-Sport;Super League;1.0;Letzigrund
+2025-09-14;Zürich Design Weeks;Fachmesse;2.0;Verschiedene Orte, Zürich
+2025-09-20;Beauty Forum Swiss;Fachmesse;1.0;Messe Zürich
+2025-09-20;Börsentag Zürich;Kongress;1.0;Kongresshaus Zürich
+2025-09-27;FCZ vs FC St. Gallen 1879;Super League;2.0;Letzigrund
+2025-10-04;GCZ vs FC Zürich;Super League;1.0;Letzigrund
+2025-10-06;European Geothermal Congress (EGC);Kongress;1.0;Kongresshaus Zürich
+2025-10-07;European Geothermal Congress (EGC);Kongress;1.0;Kongresshaus Zürich
+2025-10-08;European Geothermal Congress (EGC);Kongress;1.0;Kongresshaus Zürich
+2025-10-09;European Geothermal Congress (EGC);Kongress;1.0;Kongresshaus Zürich
+2025-10-10;European Geothermal Congress (EGC);Kongress;1.0;Kongresshaus Zürich
+2025-10-16;QS Discover Master-Messe Zürich;Fachmesse;1.0;Zürich
+2025-10-19;GCZ vs FC Sion;Super League;1.0;Letzigrund
+2025-10-26;FCZ vs BSC Young Boys;Super League;2.0;Letzigrund
+2025-10-30;GCZ vs BSC Young Boys;Super League;1.0;Letzigrund
+2025-11-01;FINEST AUDIO SHOW Zurich;Fachmesse;1.0;Mövenpick Hotel Zürich Regensdorf
+2025-11-01;FCZ vs FC Lausanne-Sport;Super League;2.0;Letzigrund
+2025-11-02;FINEST AUDIO SHOW Zurich;Fachmesse;1.0;Mövenpick Hotel Zürich Regensdorf
+2025-11-08;FCZ vs FC Luzern;Super League;2.0;Letzigrund
+2025-11-14;BLICKFANG Zürich;Fachmesse;1.0;Kongresshaus Zürich
+2025-11-15;BLICKFANG Zürich;Fachmesse;1.0;Kongresshaus Zürich
+2025-11-16;BLICKFANG Zürich;Fachmesse;1.0;Kongresshaus Zürich
+2025-11-19;DEX25 Conference;Kongress;1.0;Frame Zürich
+2025-11-23;GCZ vs FC Basel 1893;Super League;1.0;Letzigrund
+2025-11-29;FCZ vs Grasshopper Club Zürich;Super League;2.0;Letzigrund
+2025-12-06;GCZ vs Servette FC;Super League;1.0;Letzigrund
+2025-12-13;FCZ vs FC Winterthur;Super League;2.0;Letzigrund
+2025-12-17;FCZ vs FC Lugano;Super League;2.0;Letzigrund
+2025-12-21;GCZ vs FC St. Gallen 1879;Super League;1.0;Letzigrund
+2025-12-25;Weihnachten;Feiertag;1.0;Zürich
+2025-12-26;Stephanstag;Feiertag;1.0;Zürich
+2025-12-31;Silvesterzauber;Stadtfest;2.0;Zürich

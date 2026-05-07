@@ -1,0 +1,30 @@
+# --- Rohdaten (zu groß für Git) ---
+*.zip
+*.parquet
+data/raw/vbz/ist-daten/
+data/interim/vbz/ist-daten/
+
+# --- GTFS & VBB (zu groß / aus Quellen reproduzierbar) ---
+data/raw/vbz/gtfs/
+data/raw/vbb/
+
+# --- Meteo (aus Quellen reproduzierbar) ---
+data/raw/vbz/meteo/
+
+# --- Kleine Rohdaten bleiben im Repo ---
+# data/raw/vbz/events/    ← bleibt
+# data/interim/vbz/events.csv ← bleibt
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv/
+venv/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- macOS ---
+.DS_Store

@@ -1,0 +1,37 @@
+Datum;Event_Name;Typ;Gewichtung;Ort
+2023-01-01;Neujahrstag;Feiertag;1.0;Zürich
+2023-01-02;Berchtoldstag;Feiertag;1.0;Zürich
+2023-04-07;Karfreitag;Feiertag;1.0;Zürich
+2023-04-10;Ostermontag;Feiertag;1.0;Zürich
+2023-04-17;Sechseläuten;Feiertag;1.0;Zürich
+2023-05-01;Tag der Arbeit;Feiertag;1.0;Zürich
+2023-05-18;Auffahrt;Feiertag;1.0;Zürich
+2023-05-29;Pfingstmontag;Feiertag;1.0;Zürich
+2023-08-01;Nationalfeiertag;Feiertag;1.0;Zürich
+2023-09-11;Knabenschiessen;Feiertag;1.0;Zürich
+2023-12-25;Weihnachten;Feiertag;1.0;Zürich
+2023-12-26;Stephanstag;Feiertag;1.0;Zürich
+2024-01-01;Neujahrstag;Feiertag;1.0;Zürich
+2024-01-02;Berchtoldstag;Feiertag;1.0;Zürich
+2024-03-29;Karfreitag;Feiertag;1.0;Zürich
+2024-04-01;Ostermontag;Feiertag;1.0;Zürich
+2024-04-15;Sechseläuten;Feiertag;1.0;Zürich
+2024-05-01;Tag der Arbeit;Feiertag;1.0;Zürich
+2024-05-09;Auffahrt;Feiertag;1.0;Zürich
+2024-05-20;Pfingstmontag;Feiertag;1.0;Zürich
+2024-08-01;Nationalfeiertag;Feiertag;1.0;Zürich
+2024-09-09;Knabenschiessen;Feiertag;1.0;Zürich
+2024-12-25;Weihnachten;Feiertag;1.0;Zürich
+2024-12-26;Stephanstag;Feiertag;1.0;Zürich
+2025-01-01;Neujahrstag;Feiertag;1.0;Zürich
+2025-01-02;Berchtoldstag;Feiertag;1.0;Zürich
+2025-04-18;Karfreitag;Feiertag;1.0;Zürich
+2025-04-21;Ostermontag;Feiertag;1.0;Zürich
+2025-04-28;Sechseläuten;Feiertag;1.0;Zürich
+2025-05-01;Tag der Arbeit;Feiertag;1.0;Zürich
+2025-05-29;Auffahrt;Feiertag;1.0;Zürich
+2025-06-09;Pfingstmontag;Feiertag;1.0;Zürich
+2025-08-01;Nationalfeiertag;Feiertag;1.0;Zürich
+2025-09-08;Knabenschiessen;Feiertag;1.0;Zürich
+2025-12-25;Weihnachten;Feiertag;1.0;Zürich
+2025-12-26;Stephanstag;Feiertag;1.0;Zürich

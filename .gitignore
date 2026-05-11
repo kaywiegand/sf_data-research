@@ -1,4 +1,5 @@
 # --- Rohdaten (zu groß für Git) ---
+*.mp4
 *.zip
 *.parquet
 data/raw/vbz/ist-daten/

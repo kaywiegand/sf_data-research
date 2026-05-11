@@ -19,59 +19,64 @@
 
 ## Projektstruktur
 
-
-
 ````
 sf_data-research/
-├── README.md
-├── ROADMAP.md
+├── README.md                               ← Projektbeschreibung
+├── ROADMAP.md                              ← Phasen, Todos, Fortschritt
+├── PROCESS_LOG.md                          ← Projektverlauf & AI-Kontext-Einstieg
 │
 ├── notebooks/
-│   ├── vbz/                           # Zürich (VBZ) Forschung
-│   │   ├── data-events/               # Notebooks für Event-Processing
-│   │   ├── data-geo/                  # Geodaten & Mapping Benchmarks (Folium, Kepler, etc.)
-│   │   ├── data-gtfs/                 # Fahrplandaten-Aufbereitung
-│   │   ├── data-ist/                  # Ist-Daten Analyse & Demos
-│   │   ├── data-meteo/                # Wetterdaten-Pipeline
-│   │   ├── vbz-data-preparation.ipynb # Haupt-Pipeline zur Datenbereinigung
-│   │   ├── vbz-data-strategy.ipynb    # Technische Strategie & Typ-Optimierung
-│   │   ├── vbz-pandas-vs-polars.ipynb # Performance-Vergleiche
-│   │   └── vbz-master-validation.ipynb# Validierung des finalen Datensatzes
-│   └── vbb/                           # Berlin/Brandenburg (VBB) Forschung
-│       ├── vbb.ipynb                  # Basis-Analyse VBB
-│       └── vbb-rt-feed.ipynb          # Realtime-Feed (GTFS-RT) Experimente
+│   ├── vbz/                               # Zürich (VBZ) — Hauptprojekt
+│   │   ├── data-events/
+│   │   │   └── vbz-events-data.ipynb      # Event-Kalender 2023–2025
+│   │   ├── data-geo/
+│   │   │   ├── vbz-geo-data.ipynb         # Geo-Übersicht & Benchmark-Einstieg
+│   │   │   ├── vbz-geo-map-plotly.ipynb   # Plotly / Maplibre
+│   │   │   ├── vbz-geo-map-geopandas.ipynb# GeoPandas / Matplotlib
+│   │   │   ├── vbz-geo-map-folium.ipynb   # Folium / Leaflet
+│   │   │   └── vbz-geo-map-kepler.ipynb   # lonboard / Deck.gl
+│   │   ├── data-gtfs/
+│   │   │   └── vbz-gtfs-data.ipynb        # GTFS Aufbereitung & Stops Lookup
+│   │   ├── data-ist/
+│   │   │   ├── vbz-ist-daten.ipynb        # Download & Batch-Verarbeitung
+│   │   │   └── vbz-ist-daten-demo.ipynb   # Demo-Pipeline (ein Monat)
+│   │   ├── data-meteo/
+│   │   │   └── vbz-meteo-data.ipynb       # Wetterdaten-Konsolidierung
+│   │   ├── vbz-data.ipynb                 # Datenquellen & Überblick
+│   │   ├── vbz-data-strategy.ipynb        # Strategie, Entscheidungen, Pipeline
+│   │   ├── vbz-pandas-vs-polars.ipynb     # Benchmark & Lernnotebook
+│   │   ├── vbz-data-master-preparation.ipynb # Merge-Pipeline → vbz_master.parquet
+│   │   └── vbz-data-master-validation.ipynb  # Validierung des Master-Datensatzes
+│   └── vbb/                               # Berlin/Brandenburg — exploratorisch
+│       ├── vbb.ipynb                      # Basis-Analyse VBB
+│       └── vbb-rt-feed.ipynb              # GTFS-RT Feed Experimente
 │
-├── src/                               # Modularisierter Code & Skripte
-│   ├── process_ist_daten.py           # Batch-Processing für tägliche Ist-Daten
-│   └── doc_loader.py                  # Hilfsfunktionen für Dokumentation/Metadaten
+├── src/
+│   ├── process_ist_daten.py               # Batch-Processing IST-Daten (resume-fähig)
+│   └── doc_loader.py                      # Datenwörterbuch-Helper
 │
-├── reports/                           # Visualisierungen & Export-Ergebnisse
-│   ├── *.html                         # Interaktive Karten (Folium)
-│   ├── *.pdf                          # Statische Karten (GeoPandas)
-│   └── *.svg                          # Pipeline-Diagramme & Status-Grafiken
+├── assets/                                # Visualisierungen & Diagramme
+│   ├── *.html                             # Interaktive Karten (Folium)
+│   ├── *.pdf                              # Statische Karten (GeoPandas)
+│   └── *.svg                              # Pipeline-Diagramme
 │
-├── data/
-│   ├── raw/                           # Unveränderte Originaldaten (⚠️ .gitignore)
-│   │   ├── vbz/                       # Rohdaten Zürich (GTFS, Meteo, Geo, Events)
-│   │   └── vbb/                       # Rohdaten Berlin (GTFS 2023/24, RT-Logs)
-│   │
-│   └── interim/                       # Aufbereitete Daten im Zwischenformat
-│       ├── vbz/                       # Bereinigte Parquet/CSV Dateien für Zürich
-│       │   ├── ist-daten/             # ~1.100 tägliche Parquet-Dateien (2023–2025)
-│       │   ├── gtfs/                  # Tram- & Regional-Lookups (Parquet)
-│       │   ├── meteo/                 # Kombinierter meteo-master.parquet
-│       │   ├── events/                # Zentraler events-master.csv
-│       │   └── vbz_master.parquet     # Der finale, bereinigte Forschungs-Datensatz
-│       └── vbb/                       # Zwischenstände Berlin (z.B. Linienfarben)
+└── data/
+    ├── raw/                               # Unveränderte Originaldaten (⚠️ .gitignore)
+    │   └── vbz/                           # Rohdaten Zürich
+    └── interim/                           # Aufbereitete Daten
+        └── vbz/
+            ├── ist-daten/                 # 1.036 Parquets · 1,44 GB (2023–2025)
+            ├── gtfs/                      # gtfs_tram_*.parquet + gtfs_stops_lookup.parquet
+            ├── meteo/                     # meteo-final-export.parquet
+            ├── events/                    # events-master.csv (301 Einträge)
+            └── vbz_master.parquet         # Finaler Master-Datensatz ✅
 ````
 
-
-> Download-Anleitung Ist-Daten: `vbz-ist-daten.ipynb` und `vbz-ist-daten-demo.ipynb`
+> Download-Anleitung IST-Daten: `data-ist/vbz-ist-daten.ipynb` und `vbz-ist-daten-demo.ipynb`
 
 ---
 
-
-Dieses Projekt dient der Projekt-Idee und -Scope findung. Weiter der Recherche aller notwendigen Daten, Daten-Quellen und derer Aufbereitung für den eigentlich Projektstart. 
+Dieses Projekt dient der Projekt-Idee und -Scope-Findung, der Recherche aller notwendigen Datenquellen und deren Aufbereitung für den eigentlichen Projektstart.
 
 ## 1. Kurzbeschreibung
 
@@ -170,16 +175,15 @@ sicher im Projektzeitrahmen zu erreichen und Raum für Erweiterungen zu lassen.
 
 | Datentyp | Quelle | Strategie | Verzeichnis | Format |
 | :--- | :--- | :--- | :--- | :--- |
-| Verkehrsdaten | [opentransportdata.swiss](https://data.opentransportdata.swiss) | 2023–25, Filterung auf VBZ & Tram; Umstieg auf Format v2 berücksichtigt | `ist-daten/` | .zip / .parquet |
-| Wetterdaten | [Stadt Zürich OGD](https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_stundenmittelwerte) | Stundenmittelwerte (Niederschlag, Temperatur, Wind), Stationen Fluntern & Mythenquai | `meteo/` | .csv |
-| Geodaten | [ZVV / Zürich OGD](https://data.stadt-zuerich.ch/dataset/vbz_fahrplandaten_gtfs) | GTFS-Pakete für Haltestellen-Koordinaten und Stadtkreis-Zuordnung | `gtfs/` | .txt |
-| Eventdaten | Manueller Crawl | Kategorisiert nach: Stadion-Events, Stadtfeste, Konzerte, Messen, Ferien | `events/` | .csv |
+| Verkehrsdaten | [opentransportdata.swiss](https://data.opentransportdata.swiss) | 2023–25, Filterung auf VBZ & Tram; Format v1 (v2 ab Mitte 2025 ausgeschlossen) | `ist-daten/` | .zip / .parquet |
+| Wetterdaten | [Stadt Zürich OGD](https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_stundenmittelwerte) | Stundenmittelwerte (Niederschlag, Temperatur, Wind), Stationen Stampfenbachstrasse & Mythenquai | `meteo/` | .csv / .parquet |
+| Geodaten | [ZVV / Zürich OGD](https://data.stadt-zuerich.ch/dataset/vbz_fahrplandaten_gtfs) | GTFS-Pakete für Haltestellen-Koordinaten und Stadtkreis-Zuordnung (Spatial Join) | `gtfs/` | .txt / .parquet |
+| Eventdaten | Manueller Crawl | 5 Kategorien, Schwellenwert >1.000 Besucher, Gewichtungsschema 1–3 | `events/` | .csv |
 
 **Zur Datenmenge:**
 - 36 ZIP-Dateien über 3 Jahre → ca. **38 GB** komprimiert
-- Entpackt: **500–750 GB** (schweizweite CSV-Rohdaten)
-- Nach Filterung auf VBZ & Tram im Parquet-Format → **XXX GB** (wird ergänzt)
-- Fallback: Reduktion auf repräsentative Stichproben + event-gelabelte Tage, falls Verarbeitungsaufwand zu hoch
+- Entpackt: **500–720 GB** (schweizweite CSV-Rohdaten)
+- Nach Filterung auf VBZ & Tram im Parquet-Format → **~1,44 GB** (1.036 Parquet-Dateien)
 
 ---
 

@@ -38,7 +38,7 @@ Dieses File dokumentiert den gesamten Projektverlauf chronologisch und dient als
 - **Quelle:** archive.opentransportdata.swiss — 36 monatliche ZIP-Archive, 2023–2025
 - **Rohdaten:** ~38 GB komprimiert / ~720 GB entpackt / schweizweit
 - **Filter:** `BETREIBER_ID = 85:3849` (VBZ) + `PRODUKT_ID = Tram` + `AN_PROGNOSE_STATUS = REAL` + keine Durchfahrten + keine Zusatzfahrten (Ausfälle bewusst behalten)
-- **Ergebnis:** ~88 Mio. Zeilen · 8 Spalten · **1.036 Parquet-Dateien** · ~1,44 GB
+- **Ergebnis:** ~88 Mio. Zeilen · 8 Spalten · **1.081 Parquet-Dateien** · ~1,44 GB
 - **Skript:** `src/process_ist_daten.py` (batch, resume-fähig)
 - **Notebook:** `notebooks/vbz/data-ist/vbz-ist-daten.ipynb`
 
@@ -183,7 +183,7 @@ sf_data-research/
 ├── assets/                                 ✅ Karten, SVGs, Diagramme
 │
 └── data/interim/vbz/
-    ├── ist-daten/          ✅ 1.036 Parquets · 1,44 GB
+    ├── ist-daten/          ✅ 1.081 Parquets · 1,44 GB
     ├── gtfs/               ✅ gtfs_tram_*.parquet + gtfs_stops_lookup.parquet
     ├── meteo/              ✅ meteo-final-export.parquet
     ├── events/             ✅ events-master.csv (301 Einträge)
@@ -208,3 +208,35 @@ Das neue Projekt übernimmt `vbz_master.parquet` als Input. Die Datenbasis ist v
 | Zeitreihe vs. klassisches ML | Erst nach EDA sinnvoll zu entscheiden |
 | Split-Strategie | Jahres-Split als Einstieg (2025 als Test-Jahr) — in Phase 3 verfeinern |
 | Geo-Bibliothek für Dashboard | Folium (interaktiv, einfach) oder Plotly (performanter) |
+
+---
+
+## Nachtrag 2026-05-13 — Fehlende Monate im Master entdeckt
+
+### Befund
+
+Im EDA-Notebook (`zh-tram-flow/notebooks/01_exploration.ipynb`) fiel auf, dass
+**April 2023 und Oktober 2023** im Master-Datensatz fehlen.
+
+Ursache: Beim ursprünglichen Master-Build waren **1.036 Parquet-Dateien** in
+`data/interim/vbz/ist-daten/`. Inzwischen sind es **1.081** — 46 Dateien wurden
+nachträglich hinzugefügt (April 2023 komplett + Oktober 2023 teilweise).
+
+### Details
+
+| Monat | IST-Dateien vorhanden | Wiederherstellbar? |
+| :--- | :--- | :--- |
+| April 2023 | 30/30 Tage ✅ | Vollständig |
+| Oktober 2023 | 31/31 Tage ✅ | Vollständig (19.–21. Okt. = 0 Zeilen nach Filter, Quelldaten leer) |
+
+Meteo-Daten sind für beide Monate vollständig abgedeckt (nicht die Ursache).
+
+### Fix
+
+`vbz-data-master-preparation.ipynb` neu ausführen — das Notebook scannt alle
+`*.parquet` in `IST_DIR`, sodass die neuen Dateien automatisch eingeschlossen werden.
+
+**Vorher bestätigen:** `len(glob(IST_DIR / "*.parquet"))` sollte **1.096** ausgeben.
+
+Nach dem Re-Run: `vbz_master.parquet` in `zh-tram-flow/data/raw/zh-tram-data-master.parquet`
+kopieren und alle Zählungen (~88 Mio. Zeilen) in beiden Repos aktualisieren.

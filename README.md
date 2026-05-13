@@ -67,7 +67,7 @@ sf_data-research/
     │   └── vbz/                           # Rohdaten Zürich
     └── interim/                           # Aufbereitete Daten
         └── vbz/
-            ├── ist-daten/                 # 1.081 Parquets · 1,44 GB (2023–2025)
+            ├── ist-daten/                 # 1.096 Parquets · 1,44 GB (2023–2025)
             ├── gtfs/                      # gtfs_tram_*.parquet + gtfs_stops_lookup.parquet
             ├── meteo/                     # meteo-final-export.parquet
             ├── events/                    # events-master.csv (301 Einträge)
@@ -183,7 +183,7 @@ sicher im Projektzeitrahmen zu erreichen und Raum für Erweiterungen zu lassen.
 **Zur Datenmenge:**
 - 36 ZIP-Dateien über 3 Jahre → ca. **38 GB** komprimiert
 - Entpackt: **500–720 GB** (schweizweite CSV-Rohdaten)
-- Nach Filterung auf VBZ & Tram im Parquet-Format → **~1,44 GB** (1.081 Parquet-Dateien)
+- Nach Filterung auf VBZ & Tram im Parquet-Format → **~1,44 GB** (1.096 Parquet-Dateien)
 
 ---
 

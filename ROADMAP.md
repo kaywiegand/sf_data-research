@@ -28,18 +28,18 @@
 
 ---
 
-## Phase 3 — Cleaning & Vorbereitung · AKTUELL
+## Phase 3 — Cleaning & Vorbereitung 
 ### Cleaning-Architektur (aus EDA-Findings)
 ### Feature Engineering
 
 ---
 
-## Phase 4 — Modellierung · GEPLANT
+## Phase 4 — Modellierung 
 ### Modell-Entscheidung (aus EDA-Findings)
 
 ---
 
-## Phase 5 — Dashboard & Präsentation · GEPLANT
+## Phase 5 — Dashboard & Präsentation 
 ### Tooling-Entscheidung
 ### Interface
 

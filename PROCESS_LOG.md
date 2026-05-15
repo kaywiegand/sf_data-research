@@ -113,6 +113,7 @@ Dieses File dokumentiert den gesamten Projektverlauf chronologisch und dient als
 | Spalte | Typ | Quelle | Beschreibung |
 | :--- | :--- | :--- | :--- |
 | `operating_date` | Date | IST | Betriebstag |
+| `trip_id` | Utf8 | IST | Fahrt-Identifier (`FAHRT_BEZEICHNER`) — eindeutig pro Fahrt + Betriebstag |
 | `line_name` | Categorical | IST | Tramliniennummer (z.B. "11") |
 | `bpuic` | Int32 | IST | Haltestellen-ID (Join-Schlüssel) |
 | `arrival_schedule` | Datetime | IST | Planmäßige Ankunftszeit |
@@ -120,6 +121,7 @@ Dieses File dokumentiert den gesamten Projektverlauf chronologisch und dient als
 | `departure_schedule` | Datetime | IST | Planmäßige Abfahrtszeit |
 | `departure_delay` | Float32 | IST | Verspätung Abfahrt in Sekunden |
 | `canceled` | Boolean | IST | Ausfall = True |
+| `stop_sequence` | Int16 | IST | Reihenfolge des Halts in der Fahrt (1-basiert, nach `arrival_schedule` sortiert) |
 | `stop_name` | Categorical | GTFS | Haltestellenname |
 | `stop_lat` | Float32 | GTFS | Breitengrad |
 | `stop_lon` | Float32 | GTFS | Längengrad |
@@ -183,7 +185,7 @@ sf_data-research/
 ├── assets/                                 ✅ Karten, SVGs, Diagramme
 │
 └── data/interim/vbz/
-    ├── ist-daten/          ✅ 1.081 Parquets · 1,44 GB
+    ├── ist-daten/          ✅ 1.096 Parquets · 608 MB · 10 Spalten · 92,9 Mio. Zeilen
     ├── gtfs/               ✅ gtfs_tram_*.parquet + gtfs_stops_lookup.parquet
     ├── meteo/              ✅ meteo-final-export.parquet
     ├── events/             ✅ events-master.csv (301 Einträge)
@@ -208,6 +210,41 @@ Das neue Projekt übernimmt `vbz_master.parquet` als Input. Die Datenbasis ist v
 | Zeitreihe vs. klassisches ML | Erst nach EDA sinnvoll zu entscheiden |
 | Split-Strategie | Jahres-Split als Einstieg (2025 als Test-Jahr) — in Phase 3 verfeinern |
 | Geo-Bibliothek für Dashboard | Folium (interaktiv, einfach) oder Plotly (performanter) |
+
+---
+
+## Nachtrag 2026-05-15 — trip_id + stop_sequence ergänzt
+
+### Änderung
+
+`FAHRT_BEZEICHNER` war fälschlicherweise aus den IST-Daten entfernt worden.
+Ohne Trip-ID ist keine Aggregation auf Fahrt-Ebene möglich (z.B. "Delay Flow per Line",
+Segment-Fahrzeit-Analyse).
+
+### Was wurde geändert
+
+- `src/process_ist_daten.py`: `rglob` statt `glob` (findet CSVs in Unterordnern), `__MACOSX`-Filter
+- `vbz-ist-daten.ipynb`: `FAHRT_BEZEICHNER` → `trip_id` in KEEP_COLS, `stop_sequence` berechnet
+- `vbz-data-master-preparation.ipynb`: `trip_id` + `stop_sequence` in Rename + Cast ergänzt
+- Alle 1.096 Parquets neu generiert (von WGND13-ZIPs), neu prozessiert
+
+### Neue Spalten
+
+| Spalte | Typ | Beschreibung |
+| :--- | :--- | :--- |
+| `trip_id` | Utf8 | Fahrt-Identifier (`FAHRT_BEZEICHNER` aus Rohdaten) — eindeutig pro Fahrt + Betriebstag |
+| `stop_sequence` | Int16 | Reihenfolge des Halts innerhalb einer Fahrt (1-basiert, sortiert nach `arrival_schedule`) |
+
+### Neue Kennzahlen (nach Re-Run)
+
+| | Vorher | Nachher |
+| :--- | ---: | ---: |
+| Spalten IST-Parquets | 8 | 10 |
+| Zeilen IST gesamt | ~88 Mio. | 92,906,148 |
+| Größe IST-Parquets | 501 MB | 608 MB |
+| Spalten vbz_master | 24 | 26 |
+| Zeilen vbz_master | ~94,4 Mio. | 94,358,531 |
+| Größe vbz_master | 510 MB | 567 MB |
 
 ---
 

@@ -6,13 +6,13 @@
 > Vollständig dokumentiert in [`sf_data-research`](https://github.com/kaywiegand/sf_data-research)
 
 - ✅ IST-Daten: Download, Filter, Parquet-Konvertierung
-- ✅ IST-Daten: 8 Spalten, ~88 Mio. Zeilen, 1.096 Parquets, ~1,44 GB
+- ✅ IST-Daten: 10 Spalten (inkl. `trip_id`, `stop_sequence`), 92,9 Mio. Zeilen, 1.096 Parquets, 608 MB
 - ✅ GTFS: Einlesen, Filtern auf VBZ Tram, 4 Parquet-Exports
 - ✅ GTFS: `gtfs_stops_lookup.parquet` mit Spatial Join (Stadtkreise 1–12)
 - ✅ Meteo: 3 Quellen konsolidiert → `meteo-final-export.parquet` (stündlich)
 - ✅ Events: 5 Kategorien, 301 Einträge, Gewichtungsschema
 - ✅ Polars vs. Pandas Benchmark → Polars (4× schneller, 4× weniger RAM)
-- ✅ Master-Datensatz `vbz_master.parquet` erstellt — 24 Spalten: IST + GTFS + Meteo + Events
+- ✅ Master-Datensatz `vbz_master.parquet` erstellt — 26 Spalten: IST + GTFS + Meteo + Events · 94,4 Mio. Zeilen · 567 MB
 - ✅ Validierung abgeschlossen (8 Checks: Schema, Abdeckung, Wertebereiche, Nulls, Join-Qualität)
 
 ---

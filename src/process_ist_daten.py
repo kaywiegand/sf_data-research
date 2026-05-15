@@ -16,7 +16,7 @@ from pathlib import Path
 
 import pandas as pd
 
-BASE_DIR = Path("~/Workspace/sf_data-research/data/raw/vbz/ist-daten").expanduser()
+BASE_DIR = Path("/Volumes/WGND13/sf_data-research/data/raw/ist-daten")
 PARQUET_DIR = Path("~/Workspace/sf_data-research/data/interim/vbz/ist-daten").expanduser()
 
 FILTER_BETREIBER_ID = "85:3849"
@@ -55,7 +55,12 @@ def process_csv(csv_path: Path) -> int:
 
 
 def process_extracted_folder(folder: Path) -> None:
-    csv_files = sorted(folder.glob("*.csv")) + sorted(folder.glob("*.CSV"))
+    all_csvs = sorted(folder.rglob("*.csv")) + sorted(folder.rglob("*.CSV"))
+    # __MACOSX-Metadaten und macOS-Resource-Forks (._*.csv) ausschliessen
+    csv_files = [
+        f for f in all_csvs
+        if "__MACOSX" not in f.parts and not f.name.startswith("._")
+    ]
     if not csv_files:
         print(f"[info] Kein CSV in {folder.name} — Ordner wird gelöscht")
         shutil.rmtree(folder)
@@ -68,7 +73,10 @@ def process_extracted_folder(folder: Path) -> None:
         if n > 0:
             total += n
 
-    remaining = list(folder.glob("*.csv")) + list(folder.glob("*.CSV"))
+    remaining = [
+        f for f in list(folder.rglob("*.csv")) + list(folder.rglob("*.CSV"))
+        if "__MACOSX" not in f.parts and not f.name.startswith("._")
+    ]
     if not remaining:
         shutil.rmtree(folder)
         print(f"  [done] Ordner {folder.name} gelöscht")

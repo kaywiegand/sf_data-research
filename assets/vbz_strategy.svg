@@ -35,7 +35,7 @@
   <!-- Ingestion -->
   <rect x="160" y="60" width="142" height="52" rx="6" fill="#f8f8f8" stroke="#ccc" stroke-width="0.8"/>
   <text x="231" y="79" text-anchor="middle" font-weight="500" fill="#333">Filter: VBZ &amp; Tram</text>
-  <text x="231" y="93" text-anchor="middle" fill="#555">21 → 8 Spalten</text>
+  <text x="231" y="93" text-anchor="middle" fill="#555">22 → 10 Spalten</text>
   <text x="231" y="106" text-anchor="middle" fill="#555">process_ist_daten.py</text>
 
   <!-- Arrow -->
@@ -43,9 +43,9 @@
 
   <!-- Interim -->
   <rect x="330" y="60" width="168" height="52" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
-  <text x="414" y="79" text-anchor="middle" font-weight="500" fill="#085041">~1.035 Parquets</text>
-  <text x="414" y="93" text-anchor="middle" fill="#085041">87,9 Mio Zeilen · tagesweise</text>
-  <text x="414" y="106" text-anchor="middle" fill="#085041">501 MB · Polars</text>
+  <text x="414" y="79" text-anchor="middle" font-weight="500" fill="#085041">1.096 Parquets</text>
+  <text x="414" y="93" text-anchor="middle" fill="#085041">92,9 Mio Zeilen · tagesweise</text>
+  <text x="414" y="106" text-anchor="middle" fill="#085041">608 MB · Polars</text>
 
   <!-- ══ ROW 2: GTFS ══ -->
   <rect x="15" y="130" width="118" height="52" rx="6" fill="#FFF8E1" stroke="#F9A825" stroke-width="0.8"/>
@@ -136,9 +136,9 @@
   <text x="718" y="195" text-anchor="middle" font-weight="600" fill="#3C3489">vbz_master</text>
   <text x="718" y="211" text-anchor="middle" font-weight="600" fill="#3C3489">.parquet</text>
   <line x1="682" y1="220" x2="754" y2="220" stroke="#ccc" stroke-width="0.8"/>
-  <text x="718" y="237" text-anchor="middle" fill="#534AB7">88 Mio Zeilen</text>
+  <text x="718" y="237" text-anchor="middle" fill="#534AB7">94,4 Mio Zeilen</text>
   <text x="718" y="253" text-anchor="middle" fill="#534AB7">26 Spalten</text>
-  <text x="718" y="269" text-anchor="middle" fill="#534AB7">~2 GB</text>
+  <text x="718" y="269" text-anchor="middle" fill="#534AB7">567 MB</text>
 
   <!-- ══ OUTPUT → NEXT ══ -->
   <line x1="718" y1="290" x2="718" y2="318" stroke="#888" stroke-width="1.5" marker-end="url(#arr)"/>

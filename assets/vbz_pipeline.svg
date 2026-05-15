@@ -16,9 +16,9 @@
   <rect x="20" y="50" width="158" height="26" rx="8" fill="#0F6E56"/>
   <rect x="20" y="68" width="158" height="8" fill="#0F6E56"/>
   <text x="99" y="67" text-anchor="middle" font-size="12" font-weight="600" fill="#ffffff">IST-Daten</text>
-  <text x="99" y="96" text-anchor="middle" font-size="11" fill="#085041">~1.035 Parquets</text>
-  <text x="99" y="112" text-anchor="middle" font-size="11" fill="#085041">87,9 Mio Zeilen · 8 Spalten</text>
-  <text x="99" y="128" text-anchor="middle" font-size="11" fill="#085041">501 MB · Polars</text>
+  <text x="99" y="96" text-anchor="middle" font-size="11" fill="#085041">1.096 Parquets</text>
+  <text x="99" y="112" text-anchor="middle" font-size="11" fill="#085041">92,9 Mio Zeilen · 10 Spalten</text>
+  <text x="99" y="128" text-anchor="middle" font-size="11" fill="#085041">608 MB · Polars</text>
   <text x="99" y="146" text-anchor="middle" font-size="10" fill="#0F6E56" font-style="italic">Basis — keine Join-Spalte nötig</text>
 
   <!-- GTFS (blue) -->
@@ -74,9 +74,10 @@
 
   <!-- Column groups -->
   <rect x="32" y="293" width="158" height="52" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
-  <text x="111" y="308" text-anchor="middle" font-size="10" font-weight="600" fill="#0F6E56">IST-Daten (8)</text>
-  <text x="111" y="322" text-anchor="middle" font-size="10" fill="#085041">BETRIEBSTAG · LINIEN_TEXT</text>
-  <text x="111" y="335" text-anchor="middle" font-size="10" fill="#085041">BPUIC · AN/AB_DELAY</text>
+  <text x="111" y="308" text-anchor="middle" font-size="10" font-weight="600" fill="#0F6E56">IST-Daten (10)</text>
+  <text x="111" y="321" text-anchor="middle" font-size="10" fill="#085041">trip_id · stop_sequence</text>
+  <text x="111" y="334" text-anchor="middle" font-size="10" fill="#085041">BETRIEBSTAG · BPUIC</text>
+  <text x="111" y="344" text-anchor="middle" font-size="9" fill="#085041">AN/AB_DELAY · +4 weitere</text>
 
   <rect x="200" y="293" width="148" height="52" rx="5" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
   <text x="274" y="308" text-anchor="middle" font-size="10" font-weight="600" fill="#185FA5">GTFS (3)</text>
@@ -99,6 +100,6 @@
   <!-- ══ MASTER OUTPUT ══ -->
   <rect x="20" y="388" width="720" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.2"/>
   <text x="380" y="413" text-anchor="middle" font-size="14" font-weight="600" fill="#3C3489">vbz_master.parquet</text>
-  <text x="380" y="432" text-anchor="middle" font-size="11" fill="#534AB7">87,9 Mio Zeilen · 26 Spalten · ~2 GB  —  bereit für EDA, Modellierung, Dashboard</text>
+  <text x="380" y="432" text-anchor="middle" font-size="11" fill="#534AB7">94,4 Mio Zeilen · 26 Spalten · 567 MB  —  bereit für EDA, Modellierung, Dashboard</text>
 
 </svg>

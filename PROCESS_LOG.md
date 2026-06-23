@@ -248,6 +248,38 @@ Segment-Fahrzeit-Analyse).
 
 ---
 
+## Nachtrag 2026-06-23 — Data Foundation dokumentiert
+
+### Kontext
+
+Neue Sessions zu sf_data-research mussten **raten** statt zu **wissen**:
+- Woher kommt `stop_sequence` genau?
+- Warum fehlt `stop_times.parquet`?
+- Welche GTFS-Files existieren + welche nicht?
+- Welche Gotchas gibt es?
+
+### Was wurde gemacht
+
+**Neue Datei:** `/sf_data-research/DATA_FOUNDATION.md` — umfassende Single Source of Truth
+
+**Inhalte:**
+1. **stop_sequence-Herkunft & Berechnung** — exakt wie's im Code passiert
+2. **GTFS-Struktur** — Übersicht aller 5 Files + Lookup-Strategie
+3. **Master-Schema** — alle 26 Spalten mit Quelle, Typ, Nullable-Status
+4. **5 bekannte Gotchas** — Stop-Sequence, GTFS-Jahrgänge, Kurs-Varianten, Fahrtrichtung, fehlende Files
+5. **Reproduzierbarkeit** — wie man den ganzen Master von Anfang neu aufbaut
+6. **Quality Checks** — 8-Check Validierung mit Ergebnissen
+
+**Memory aktualisiert:**
+- `sf_data_research_foundation.md` — Quick-Reference mit Links zur Volltext-Doku
+- `MEMORY.md` — Eintrag hinzugefügt
+
+### Ziel
+
+Zukünftige Sessions zu sf_data-research können sofort nachschlagen statt zu raten.
+
+---
+
 ## Nachtrag 2026-05-13 — Fehlende Monate im Master entdeckt
 
 ### Befund

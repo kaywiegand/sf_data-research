@@ -248,35 +248,60 @@ Segment-Fahrzeit-Analyse).
 
 ---
 
-## Nachtrag 2026-06-23 — Data Foundation dokumentiert
+## Nachtrag 2026-06-23 — Data Foundation dokumentiert + stop_times.parquet konvertiert
 
-### Kontext
+### Teil A: Data Foundation Dokumentation
 
-Neue Sessions zu sf_data-research mussten **raten** statt zu **wissen**:
-- Woher kommt `stop_sequence` genau?
-- Warum fehlt `stop_times.parquet`?
-- Welche GTFS-Files existieren + welche nicht?
-- Welche Gotchas gibt es?
+**Kontext:** Neue Sessions zu sf_data-research mussten **raten** statt zu **wissen**.
 
-### Was wurde gemacht
-
-**Neue Datei:** `/sf_data-research/DATA_FOUNDATION.md` — umfassende Single Source of Truth
+**Neue Datei:** `DATA_FOUNDATION.md` — umfassende Single Source of Truth
 
 **Inhalte:**
 1. **stop_sequence-Herkunft & Berechnung** — exakt wie's im Code passiert
-2. **GTFS-Struktur** — Übersicht aller 5 Files + Lookup-Strategie
+2. **GTFS-Struktur** — Übersicht aller Files + Lookup-Strategie
 3. **Master-Schema** — alle 26 Spalten mit Quelle, Typ, Nullable-Status
-4. **5 bekannte Gotchas** — Stop-Sequence, GTFS-Jahrgänge, Kurs-Varianten, Fahrtrichtung, fehlende Files
+4. **5 bekannte Gotchas** — BPUIC/SLOID, Stop-Sequence, GTFS-Jahrgänge, Kurs-Varianten, Fahrtrichtung
 5. **Reproduzierbarkeit** — wie man den ganzen Master von Anfang neu aufbaut
 6. **Quality Checks** — 8-Check Validierung mit Ergebnissen
 
 **Memory aktualisiert:**
-- `sf_data_research_foundation.md` — Quick-Reference mit Links zur Volltext-Doku
+- `sf_data_research_foundation.md` — Quick-Reference
 - `MEMORY.md` — Eintrag hinzugefügt
+
+### Teil B: stop_times.parquet Konvertierung
+
+**Situation:** Raw stop_times.txt Files existierten (~1,8 GB), waren aber nicht zu Parquet konvertiert.
+
+**Was wurde gemacht:**
+
+1. **Konvertierungs-Notebook:** `notebooks/vbz/data-gtfs/gtfs-stop-times-parquet.ipynb`
+2. **Konvertierung durchgeführt:** Alle 4 Jahre (2023–2026)
+
+**Ergebnis:**
+
+| Datei | Zeilen | Größe |
+| :--- | ---: | ---: |
+| `gtfs_stop_times_2023.parquet` | 4,773,436 | 18 MB |
+| `gtfs_stop_times_2024.parquet` | 4,034,446 | 16 MB |
+| `gtfs_stop_times_2025.parquet` | 6,032,643 | 21 MB |
+| `gtfs_stop_times_2026.parquet` | 3,427,849 | 13 MB |
+| **`gtfs_tram_stop_times.parquet` (merged)** | **18,268,374** | **68 MB** |
+
+Konvertierung: 27.4 Sekunden (alle 4 Jahr), Merge: 1.6 Sekunden
+
+**Spalten:** `trip_id`, `stop_sequence`, `stop_id`, `arrival_time`, `departure_time`, `year`
+
+**Wichtiger Hinweis:** GTFS stop_times nutzt SLOID-Format (nicht BPUIC). Nicht direkt mit IST-Daten joinbar. Nutze `gtfs_stops_lookup` als Brücke.
+
+**Use-Cases:**
+- Trip-Level Analysen (z.B. Fahrtdauer)
+- GTFS-spezifische Analysen
+- Validierung: stop_sequence IST vs. GTFS konsistent?
 
 ### Ziel
 
-Zukünftige Sessions zu sf_data-research können sofort nachschlagen statt zu raten.
+- ✅ Dokumentation: Zukünftige Sessions können sofort nachschlagen
+- ✅ Data Completeness: Alle GTFS-Files jetzt vorhanden + dokumentiert
 
 ---
 

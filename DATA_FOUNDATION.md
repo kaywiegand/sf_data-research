@@ -173,21 +173,29 @@ Die Sortierung nach `arrival_schedule` (Soll-Ankunftszeit) ist **korrekt** weil:
 | `gtfs_tram_trips.parquet` | ✅ | ~10 MB | Parquet | Fahrten: trip_id, route_id, shape_id, direction_id | per year |
 | `gtfs_tram_shapes.parquet` | ✅ | ~15 MB | Parquet | Streckengeometrie: shape_id, lat, lon, sequence | per year |
 | `gtfs_stops_lookup.parquet` | ✅ | ~2 MB | Parquet | **Join-Tabelle:** bpuic → stop_name, coords, district | de-duped, extended |
-| `stop_times.parquet` | ❌ | — | — | **NICHT konvertiert** | Raw .txt existiert in `data/raw/` |
+| `gtfs_tram_stop_times.parquet` | ✅ | 68 MB | Parquet | **Merged stop_times:** trip_id, stop_sequence, arrival/departure times | 2023–2026, 18,2 Mio. Zeilen |
+| `gtfs_stop_times_{2023,2024,2025,2026}.parquet` | ✅ | 13–21 MB ea. | Parquet | Stop times **pro Jahr** (falls Jahr-spezifische Analysen nötig) | 3,4–6,0 Mio. Zeilen |
 
-### Warum stop_times.parquet fehlt
+### stop_times.parquet — jetzt vorhanden ✅
 
-**Raw-Files existieren:** `data/raw/vbz/gtfs/*/stop_times.txt` (für jedes Jahr)
+**Früher:** Nur Raw-Files in `data/raw/vbz/gtfs/*/stop_times.txt`
 
-**Wurden NICHT zu Parquet konvertiert** weil:
-- `stop_sequence` wird aus **IST-Daten berechnet** (elegantere Lösung)
-- GTFS stop_times ist daher redundant
-- Speichert eine GB+ an unkomprimiertem Format
+**Jetzt:** Konvertiert zu Parquet (2023–2026)
+- `gtfs_tram_stop_times.parquet` — Merged, 18,2 Mio. Zeilen, 68 MB
+- `gtfs_stop_times_{2023,2024,2025,2026}.parquet` — Pro Jahr (falls nötig)
 
-**Wenn du stop_times.parquet brauchst:**
-1. Raw `.txt`-Dateien sind vorhanden
-2. Konvertierungs-Script könnte hinzugefügt werden
-3. Aktuell nicht im Scope — nach Diskussion
+**Konvertierungs-Notebook:** `notebooks/vbz/data-gtfs/gtfs-stop-times-parquet.ipynb`
+
+**Warum erst jetzt?**
+1. Höhere Priorität: `stop_sequence` aus **IST-Daten** (elegantere Lösung)
+2. GTFS stop_times ist zur Basis-Analyse nicht nötig
+3. Raw-Files waren verfügbar, nur nicht konvertiert
+
+**Wann brauchst du stop_times.parquet?**
+- Trip-Level Analysen (z.B. durchschnittliche Fahrtdauer pro Linie)
+- Erweiterte Geometrie-Analysen mit GTFS shapes
+- **Validierung:** ist `stop_sequence` aus IST konsistent mit GTFS?
+- Fahrtplan-basierte Verspätungs-Definitionen (z.B. "15 min Verspätung zu Halt #3")
 
 ### GTFS ändert sich pro Jahr
 
@@ -314,6 +322,14 @@ master.join(
 
 ## 5. Gotchas & Bekannte Tücken
 
+### 0. BPUIC vs. SLOID — die Join-Falle
+
+**Problem:** IST-Daten nutzen BPUIC, GTFS stop_times nutzen SLOID. Sie sind nicht direkt joinbar.
+
+**Lösung:** Nutze `gtfs_stops_lookup.parquet` als Brücke (enthält BPUIC + Extended Metadaten).
+
+**Details:** Siehe Sektion 3.4 oben.
+
 ### 1. stop_sequence ist chronologisch, nicht kausal
 
 **Problem:** `stop_sequence` folgt der **geplanten** Reihenfolge (Soll-Ankunftszeit), nicht der tatsächlichen.
@@ -383,19 +399,31 @@ direction_lookup = {
 }
 ```
 
-### 5. stop_times.parquet fehlt — absichtlich
+### 5. BPUIC vs. SLOID in stop_times
 
-**Situation:** Raw-Files existieren (`data/raw/vbz/gtfs/*/stop_times.txt`), wurden aber nicht zu Parquet konvertiert.
+**Problem:** `gtfs_tram_stop_times.parquet` nutzt GTFS-Standard `stop_id` (SLOID-Format wie `ch:1:sloid:90805::0`).
 
-**Grund:**
-- `stop_sequence` wird aus **IST-Daten** berechnet (bessere Lösung)
-- GTFS stop_times ist redundant
-- Spart ~1 GB Speicher
+Das ist **NICHT direkt** mit IST-Daten (die nutzen BPUIC) joinbar.
 
-**Wenn du stop_times brauchst:**
-1. Konvertierungs-Script könnte hinzugefügt werden
-2. Dokumentiere dazu den konkreten Use-Case
-3. Alle 3 Jahre (2023, 2024, 2025) konvertieren
+**Beispiel — was funktioniert NICHT:**
+```python
+# ❌ Falsch:
+master.join(stop_times, left_on='bpuic', right_on='stop_id', how='left')
+# Resultat: 0 Matches (BPUIC ≠ SLOID)
+```
+
+**Beispiel — was funktioniert:**
+```python
+# ✅ Richtig:
+# Nutze gtfs_stops_lookup — enthält BPUIC + SLOID Mapping
+master.join(stops_lookup, on='bpuic', how='left')  # bpuic ← BPUIC
+# Dann kannst du stop_sequence validieren:
+stop_seq_gtfs = stop_times[stop_times['trip_id'] == trip_id]['stop_sequence']
+stop_seq_ist = master[master['trip_id'] == trip_id]['stop_sequence']
+# Sollten identisch sein
+```
+
+**Best Practice:** Für IST-Join weiterhin `gtfs_stops_lookup.parquet` nutzen. Nutze `gtfs_tram_stop_times.parquet` nur für Trip-Level oder GTFS-spezifische Analysen.
 
 ---
 
